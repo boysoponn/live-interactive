@@ -10,6 +10,7 @@ import ShowButton from './detail/showButton';
 import imgSelect1 from '../image/1.png';
 import imgSelect2 from '../image/2.png';
 import Grid from '@material-ui/core/Grid';
+import { spacing } from '@material-ui/system';
 
 const shop=[
     {id: 0, name: 'jean', price:500 ,img :'https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bf39.png'},
@@ -111,52 +112,80 @@ state={
 
   render() {
     return (
-      <div className="master">
-        {this.state.data !== null ?
-        <div>
-          <div className="preview center">
-            <Preview
-              {...this.state}
-            />
-          </div>
-          <div className="box1">
-            <div>
-              <VideoLink
-              size="50"
-              placeholder={"Video Link"}
-              onChange={this.onChangeValue('videoLink')}
-              value={this.state.videoLink}
-              />
-            </div>
-            <div className="select center">
-              <Select img={imgSelect1} checked={this.state.select === 'A'} value="A" onChange={this.onChangeValue('select')}/>
-              <Select img={imgSelect2} checked={this.state.select === 'B'} value="B" onChange={this.onChangeValue('select')}/>
-            </div>
-            <div className="input">
-              <Input 
-                {...this.state} 
-                shop={this.state.shop} 
-                onChangeProduct1={this.onChangeValue('product1')}
-                onChangeTitle1={this.onChangeValue('title1')}
-                onChangeDescription1={this.onChangeValue('description1')}
+      this.state.videoLink?
+      <Grid container>
+        <Grid 
+          item xs={12}
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Preview
+            {...this.state}
+          />  
+        </Grid>
+        <Grid item xs={9}>
+          <Grid container>
+            <Grid item xs={12}>
+              <Grid item xs={12}
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <VideoLink
+                placeholder={"Video Link"}
+                onChange={this.onChangeValue('videoLink')}
+                value={this.state.videoLink}
+                /> 
+              </Grid>
+              <Grid container>
+                <Grid item xs={12}      
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Select img={imgSelect1} checked={this.state.select === 'A'} value="A" onChange={this.onChangeValue('select')}/>
+                  <Select img={imgSelect2} checked={this.state.select === 'B'} value="B" onChange={this.onChangeValue('select')}/>
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <Input 
+                  {...this.state} 
+                  shop={this.state.shop} 
+                  onChangeProduct1={this.onChangeValue('product1')}
+                  onChangeTitle1={this.onChangeValue('title1')}
+                  onChangeDescription1={this.onChangeValue('description1')}
 
-                onChangeProduct2={this.onChangeValue('product2')}
-                onChangeTitle2={this.onChangeValue('title2')}
-                onChangeDescription2={this.onChangeValue('description2')}
-              />
-            </div>
-            <ShowButton label="SAVE" onClick={this.save}/>
-          </div>
-          <div className="box2">
-            <div className="showButton">
-              <ShowButton label={!this.state.status?"SHOW":"HIDDEN"} onClick={this.show}/>
-            </div>
-          </div>
-        </div>
-        :
-          <ShowButton label={"START"} onClick={this.create}/>
-        }
-      </div>
+                  onChangeProduct2={this.onChangeValue('product2')}
+                  onChangeTitle2={this.onChangeValue('title2')}
+                  onChangeDescription2={this.onChangeValue('description2')}
+                />
+              </Grid>
+              <Grid item xs={12}
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                 <ShowButton label="SAVE" onClick={this.save}/>
+              </Grid>
+            </Grid>  
+          </Grid>
+        </Grid>
+        <Grid 
+          item xs={3}
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <ShowButton label={!this.state.status?"SHOW":"HIDDEN"} onClick={this.show}/>
+        </Grid>
+      </Grid>
+      :<ShowButton label={"START"} onClick={this.create}/>
     );
    }
   }
