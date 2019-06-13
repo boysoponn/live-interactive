@@ -7,8 +7,12 @@ class Preview1 extends Component {
     return (
         <Div >
           <DivText>
-            <P size="80px">{this.props.title1}</P>
-            <P size="20px">{this.props.description1}</P>
+            <P color="#fff" size="80px">{this.props.title1}</P>
+            <P color="#fff" size="20px">{this.props.description1}</P>
+            <P color="#fff" size="15px" >{this.props.shop[this.props.product1].name+" "}
+                  <P display="inline" color="#000" size="15px" weight="800">{this.props.shop[this.props.product1].price}</P>
+                  <P display="inline" color="#000" size="15px" weight="700"> Bath</P>
+            </P>
           </DivText>
             <DivImage>
               <Image src= {this.props.shop[this.props.product1].img} alt="img"/>
@@ -37,6 +41,8 @@ class Preview1 extends Component {
   const P = styled.p`
   font-size:${props => props.size};
   color:${props => props.color};
+  font-weight:${props => props.weight};
+  display:${props => props.display?props.display:"block"};
   margin: 0;
   `;
 

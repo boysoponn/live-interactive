@@ -9,8 +9,12 @@ class Preview2 extends Component {
           <Div1>
             <Detail>
               <DivText>
-                <P size="50px">{this.props.title1}</P>
-                <P size="12px">{this.props.description1}</P>
+                <P color="#fff" size="50px">{this.props.title1}</P>
+                <P color="#fff" size="12px">{this.props.description1}</P>
+                <P color="#fff" size="15px" >{this.props.shop[this.props.product1].name+" "}
+                  <P display="inline" color="#000" size="15px" weight="800">{this.props.shop[this.props.product1].price}</P>
+                  <P display="inline" color="#000" size="15px" weight="700"> Bath</P>
+                </P>
               </DivText>
               <DivImage>
                   <Image src= {this.props.shop[this.props.product1].img} alt="img"/>
@@ -20,8 +24,12 @@ class Preview2 extends Component {
           <Div2>
             <Detail>
               <DivText>
-                <P size="50px">{this.props.title2}</P>
-                <P size="12px">{this.props.description2}</P>
+                <P color="#fff" size="50px">{this.props.title2}</P>
+                <P color="#fff" size="12px">{this.props.description2}</P>
+                <P color="#fff" size="15px" >{this.props.shop[this.props.product2].name+" "}
+                  <P display="inline" color="#000" size="15px" weight="800">{this.props.shop[this.props.product2].price}</P>
+                  <P display="inline" color="#000" size="15px" weight="700"> Bath</P>
+                </P>
               </DivText>
               <DivImage>
                 <Image src= {this.props.shop[this.props.product2].img} alt="img"/>
@@ -70,6 +78,8 @@ class Preview2 extends Component {
   const P = styled.p`
   font-size:${props => props.size};
   color:${props => props.color};
+  font-weight:${props => props.weight};
+  display:${props => props.display?props.display:"block"};
   margin: 0;
   `;
 
