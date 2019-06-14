@@ -27,10 +27,6 @@ class Input extends Component {
 
   export default Input;
 
-  const Div = styled.div`
-
-  `;
-
   const Image = styled.img`
   width:250px
   `;

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 class Input extends Component {
 
   render() {
     return (
-      <div>
-         <button onClick={this.props.onClick}>{this.props.label}</button>
-      </div>
+      <Button variant="contained" color="primary" onClick={this.props.onClick} >
+        {this.props.label}
+      </Button>
     );
    }
   }

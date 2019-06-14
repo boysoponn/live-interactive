@@ -9,7 +9,7 @@ class Input extends Component {
       style={{width:'500px'}}
       multiline={true}
       placeholder={this.props.label}
-      label="Name"           
+      label={this.props.label}           
       onChange={this.props.onChange}
       value={this.props.value}
       margin="normal"

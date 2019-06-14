@@ -98,7 +98,7 @@ class Preview2 extends Component {
 
   const DivImage = styled.div`
     right: 0;
-    height:100px;
+    height:80px;
   `;
 
   const Image = styled.img`

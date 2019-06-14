@@ -10,7 +10,6 @@ import ShowButton from './detail/showButton';
 import imgSelect1 from '../image/1.png';
 import imgSelect2 from '../image/2.png';
 import Grid from '@material-ui/core/Grid';
-import { spacing } from '@material-ui/system';
 
 const shop=[
     {id: 0, name: 'jean', price:500 ,img :'https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bf39.png'},
@@ -112,7 +111,6 @@ state={
 
   render() {
     return (
-      this.state.videoLink?
       <Grid container>
         <Grid 
           item xs={12}
@@ -135,6 +133,7 @@ state={
                 alignItems="center"
               >
                 <VideoLink
+                label="Link"
                 placeholder={"Video Link"}
                 onChange={this.onChangeValue('videoLink')}
                 value={this.state.videoLink}
@@ -185,7 +184,6 @@ state={
           <ShowButton label={!this.state.status?"SHOW":"HIDDEN"} onClick={this.show}/>
         </Grid>
       </Grid>
-      :<ShowButton label={"START"} onClick={this.create}/>
     );
    }
   }
