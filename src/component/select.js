@@ -5,7 +5,7 @@ class Input extends Component {
 
   render() {
     return (
-      <Grid item xs={6}
+      <Grid item md={12} lg={4}
       container
       direction="row"
       justify="center"

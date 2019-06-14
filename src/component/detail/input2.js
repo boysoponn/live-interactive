@@ -7,7 +7,7 @@ class Input2 extends Component {
   render() {
     return (
       <Grid container>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
           <Grid           
           container
           direction="row"
@@ -31,7 +31,7 @@ class Input2 extends Component {
             </div>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item lg={6} md={12}>
           <Grid
             container
             direction="row"

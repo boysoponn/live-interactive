@@ -9,12 +9,15 @@ import Select from './select';
 import ShowButton from './detail/showButton';
 import imgSelect1 from '../image/1.png';
 import imgSelect2 from '../image/2.png';
+import imgSelect3 from '../image/3.png';
 import Grid from '@material-ui/core/Grid';
 
 const shop=[
-    {id: 0, name: 'jean', price:500 ,img :'https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bf39.png'},
-    {id: 1, name: 'shoe', price:1400, img :'https://s1.r29static.com/bin/shop/83a/x/2196108/image.png'},
-    {id: 2, name: 'T-shirt', price:900, img :'https://purepng.com/public/uploads/large/purepng.com-t-shirtt-shirtfabrict-shapegramnets-1421526429337ircsl.png'}
+    {id: 0, name: 'Jean', price:500 ,img :'https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bf39.png'},
+    {id: 1, name: 'Shoe', price:1400, img :'https://s1.r29static.com/bin/shop/83a/x/2196108/image.png'},
+    {id: 2, name: 'Vest', price:140, img :'https://pngimage.net/wp-content/uploads/2018/06/vest-png-5.png'},
+    {id: 3, name: 'Shirt', price:2499, img :'http://pluspng.com/img-png/shirt-hd-png-dress-shirt-png-hd-png-image-480.png'},
+    {id: 5, name: 'T-shirt', price:900, img :'https://purepng.com/public/uploads/large/purepng.com-t-shirtt-shirtfabrict-shapegramnets-1421526429337ircsl.png'}
   ];
 
 class Master extends Component {
@@ -123,7 +126,7 @@ state={
             {...this.state}
           />  
         </Grid>
-        <Grid item xs={9}>
+        <Grid item md={12} lg={9} >
           <Grid container>
             <Grid item xs={12}>
               <Grid item xs={12}
@@ -148,6 +151,7 @@ state={
                 >
                   <Select img={imgSelect1} checked={this.state.select === 'A'} value="A" onChange={this.onChangeValue('select')}/>
                   <Select img={imgSelect2} checked={this.state.select === 'B'} value="B" onChange={this.onChangeValue('select')}/>
+                  <Select img={imgSelect3} checked={this.state.select === 'C'} value="C" onChange={this.onChangeValue('select')}/>
                 </Grid>
               </Grid>
               <Grid item xs={12}>
@@ -175,7 +179,7 @@ state={
           </Grid>
         </Grid>
         <Grid 
-          item xs={3}
+          item md={12} lg={3}
           container
           direction="row"
           justify="center"

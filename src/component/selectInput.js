@@ -11,7 +11,11 @@ class SelectInput extends Component {
       :
       this.props.select==='B'?
       <Input2 {...this.props}/>
-      :null
+      :
+      this.props.select==='C'?
+      <Input1 {...this.props}/>
+      :
+      null
     );
    }
   }
